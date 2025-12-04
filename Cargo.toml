@@ -1,0 +1,14 @@
+[package]
+name = "mindgrove-rtos"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+riscv = "0.11"
+riscv-rt = "0.12"
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
