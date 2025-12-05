@@ -21,14 +21,22 @@ fn uart_puts(s: &str) {
 #[entry]
 fn main() -> ! {
     uart_puts("Hello from Rust RTOS!\r\n");
+    uart_puts("Running on QEMU virt!\r\n");
+    
+    
     loop {
-        unsafe { riscv::asm::wfi(); }
+        unsafe {
+            riscv::asm::wfi();
+        }
     }
 }
 
 #[panic_handler]
-fn panic(_: &PanicInfo) -> ! {
+fn panic(_info: &PanicInfo) -> ! {
+    uart_puts("\r\nPANIC!\r\n");
     loop {
-        unsafe { riscv::asm::wfi(); }
+        unsafe {
+            riscv::asm::wfi();
+        }
     }
 }
