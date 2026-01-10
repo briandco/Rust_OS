@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd /home/cbq2kor/Desktop/DevSpace/Test/RISC_V/OS\\\\ Rust/mindgrove-rtos:*)"
+    ]
+  }
+}
